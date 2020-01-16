@@ -22,7 +22,20 @@ inquirer.prompt([
     axios.get(githubURL)
         .then(({ data }) => {
             console.log(data);
+        
+            const profileImg = data.avatar_url;
+            const userName = data.login;
+            const location = data.location;
+            const htmlURL = data.html_url;
+            const blog = data.blog;
+            const userBio = data.bio;
+            const publicRepo = data.public_repos;
+            const followers = data.followers;
+            const stars = data.starred_url;
+            const following = data.following;
             
+            const everything = [profileImg, userName, location, htmlURL, blog, userBio, publicRepo, followers, stars, following];
+            console.log(everything)
         });
 })
 
